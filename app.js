@@ -1,14 +1,19 @@
-const http = require('http');
+var express = require('express');
+var app = express();
+var path = require('path');
+var os = require('os');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hola Mundo');
+app.get('/', function (req, res) {
+  res.render('index', {
+    platform: process.platform,
+    bit : process.arch,
+    runtime : process.versions.node,
+    endian : os.endianness
+  });
 });
 
-server.listen(port, hostname, () => {
-  console.log(`El servidor se está ejecutando en cambio uno http://${hostname}:${port}/`);
-});
+app.listen(8080);

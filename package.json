@@ -1,0 +1,33 @@
+{
+  "name": "demo-nodejs-para-multiarch",
+  "version": "1.0.0",
+  "description": "Demo para mostrar node js y la arquitectura en donde corre",
+  "main": "app.js",
+  "scripts": {
+    "run": "node app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rodroxrom/hola_mundo_nodejs.git"
+  },
+  "keywords": [
+    "openshift",
+    "devops",
+    "containers",
+    "rodrigo"
+  ],
+  "author": "Rodrigo Romero (rromero@ec.ibm.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rodroxrom/hola_mundo_nodejs.git/issues"
+  },
+  "homepage": "https://github.com/rodroxrom/hola_mundo_nodejs.git#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "os": "^0.1.1"
+  }
+}
