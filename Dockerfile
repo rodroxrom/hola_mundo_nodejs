@@ -1,5 +1,4 @@
-#FROM registry.redhat.io/ubi8/nodejs-14
-FROM ubi8/nodejs-14
+FROM registry.redhat.io/ubi8/nodejs-14
 
 USER 0
 # Add application sources
