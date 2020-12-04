@@ -1,14 +1,19 @@
-FROM registry.redhat.io/ubi8/nodejs-14
+FROM node:15
 
-USER 0
-# Add application sources
-ADD . .
+# Create app directory
+WORKDIR /usr/src/app
 
-RUN chown -R 1001:0 .
-USER 1001
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-# Install the dependencies
 RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
-# Run script uses standard ways to run the application
-CMD npm run -d start
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "app.js" ]
