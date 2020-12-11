@@ -1,0 +1,7 @@
+Construir la imagen
+# docker build -t rodroxrom/node-hola-mundo .
+Revisar la imagen 
+# docker images
+Exponer el contenedor
+# docker run -p 8080:8080 -d rodroxrom/node-hola-mundo
+
